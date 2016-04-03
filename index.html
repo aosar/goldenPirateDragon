@@ -3,6 +3,33 @@
 <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+<h1 id="header" class='clickable-div'>Welcome</h1>
+<script>
+//function test(){document.getElementById("par").innerHTML = "stuff";}
+/**
+ * @var instructions clickthrough introduction
+ * subject to change
+ **/
+var instructions = ["Welcome to this website","You're probably wondering what goes on here","here we brainstorm","we dont take back our ideas","which is why we make your ideas disappear until you're ready to see them","to get started, click the bubble"];
+//var instructions = [0,1,2,3,4,5];
+var click_count = 0;
+console.log("Click count:"+click_count);
+window.onload = function intro(){
+$("body").click(function(){
+        $("h1").fadeToggle();
+        document.getElementById("h1").innerHTML = instructions[click_count];
+        click_count++;
+      });
+      
+   }
+
+function clickIn(i){
+        document.getElementById("header").innerHTML = instructions[i];
+        $("h1").fadeIn();
+}
+  </script>
+    
+    
 <input id="toggle" type="button" value=" Stop " />
 <div id="canvas"></div>
 <div id="info"></div>
